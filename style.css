@@ -1,0 +1,19 @@
+.is-hidden {
+  display: none!important;
+}
+.is-visible {
+  display: block!important;
+}
+#startTestButton {
+  display: block;
+}
+#nextButton {
+  display: none;
+}
+#submitButton {
+  display: none;
+}
+#submitButton.is-visible {
+  display: block;
+}
+</style>
