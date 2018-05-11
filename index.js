@@ -28,7 +28,20 @@ const questionsList = [{
   correctAnswer: '1',
 },]
 
+// render first question
+function renderInitialQuestion () {
+  startTestButton.classList.toggle('is-hidden')
+  nextButton.classList.toggle('is-visible')
+  renderQuestion(counter)
+}
+
+
 function renderQuestion(questionNumber) {
+  //progress
+  console.log(questionNumber)
+  progress = ((questionNumber+1)/questionsList.length) * 100
+  console.log(progress)
+
   let answer=[]
   let question=[]
   question.push(`<h4>${questionsList[questionNumber].question}</h4>`)
@@ -40,21 +53,16 @@ function renderQuestion(questionNumber) {
   questionsElement.innerHTML = `<li>${[...question,...answer].join('')}</li>`
 }
 
-// render first question
-function renderInitialQuestion () {
-  startTestButton.classList.toggle('is-hidden')
-  nextButton.classList.toggle('is-visible')
-  submitButton.classList.toggle('is-visible')
-  renderQuestion(counter)
-}
-
 //render next question
 function showNextQuestion() {
-  if(counter < questionsList.length - 1) {
+  if(counter < questionsList.length-1) {
     counter += 1
   }
   else {
     nextButton.className+="is-hidden"
+    submitButton.classList.toggle('is-visible')
+    questionsElement.innerHTML='<li>finished</li>'
+    return
   }
   renderQuestion(counter)
 }
@@ -66,13 +74,16 @@ function showResult(e) {
   answers.forEach((item,index) => {
     score += (item.value === questionsList[index].correctAnswer) ? 1 : 0
   })
-  console.log(score)
 }
-counter = 0
+
+
+let counter = 0
+let progress = 0
 let submitButton = document.getElementById("submitButton")
 let startTestButton = document.getElementById("startTestButton")
 let nextButton = document.getElementById("nextButton")
 let questionsElement = document.getElementById("questions")
+let progressBar =  document.getElementById("progress")
 
 startTestButton.addEventListener('click', renderInitialQuestion)
 submitButton.addEventListener('click', showResult)
