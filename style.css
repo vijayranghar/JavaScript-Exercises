@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.wrapper {
+  display: flex;
+  height: 100%;
+}
+.navigation {
+  background: #2e3243;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.questions-wrapper {
+  background: #f7f8fb;
+  width: calc(100% - 500px);
+}
+aside {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
 .is-hidden {
   display: none!important;
 }
