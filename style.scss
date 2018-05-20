@@ -1,81 +1,86 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
-
+  box-sizing: border-box;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  font-family: 'Source Sans Pro', sans-serif; }
-
+  font-family: 'Source Sans Pro', sans-serif;
+}
 a {
   text-decoration: none;
-  color: #fff; }
-
+  color: #fff;
+}
 ul {
-  list-style: none; }
-  ul li {
+  list-style: none;
+  li {
     margin: 0;
-    padding: 0; }
-
+    padding: 0;
+  }
+}
 header {
   background: #384C75;
-  padding: 10px; }
-  header .bullet {
+  padding: 10px;
+  .bullet {
     height: 10px;
     width: 10px;
     background: white;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 5px; }
-
+    margin-right: 5px;
+  }
+}
 .wrapper {
   display: flex;
-  height: 100%; }
-  .wrapper .navigation {
+  height: 100%;
+  .navigation {
     background: #2e3243;
     width: 200px;
     display: flex;
-    justify-content: center; }
-  .wrapper .questions-wrapper {
+    justify-content: center;
+  }
+  .questions-wrapper {
     background: #f7f8fb;
-    width: calc(100% - 500px); }
-
+    width: calc(100% - 500px);
+  }
+}
 aside {
   width: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  justify-content: flex-start; }
-  aside .progress {
+  justify-content: flex-start;
+  .progress {
     background: #272938;
     display: flex;
     color: #fff;
     flex-direction: column;
-    align-items: center; }
-    aside .progress h4 {
+    align-items: center;
+    h4 {
       font-size: 45px;
       color: #a87ece;
-      font-weight: 400; }
-
+      font-weight: 400;
+    }
+  }
+}
 .is-hidden {
-  display: none !important; }
-
+  display: none!important;
+}
 .is-visible {
-  display: block !important; }
-
+  display: block!important;
+}
 #startTestButton {
-  display: block; }
-
+  display: block;
+}
 #nextButton {
-  display: none; }
-
+  display: none;
+}
 #submitButton {
-  display: none; }
-
+  display: none;
+}
 #submitButton.is-visible {
-  display: block; }
-
-/*# sourceMappingURL=style.css.map */
+  display: block;
+}
