@@ -46,9 +46,9 @@ function renderQuestion(questionNumber) {
   let question=[]
   question.push(`<h4>${questionsList[questionNumber].question}</h4>`)
   questionsList[questionNumber].answer.forEach((item,index) => {
-    answer.push(`<label>${item.label}</label>&nbsp;
-    <input value=${item.option} name=${questionNumber} type="radio"/>&nbsp;
-    <strong>${item.option}</strong>&nbsp;&nbsp;`)
+    answer.push(`<div class="option"><div class="label"><label>${item.label}</label></div>
+    <input value=${item.option} name=${questionNumber} type="radio"/>
+    <strong>${item.option}</strong></div>`)
   })
   questionsElement.innerHTML = `<li>${[...question,...answer].join('')}</li>`
 }
