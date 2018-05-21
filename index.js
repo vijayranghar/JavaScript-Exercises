@@ -1,29 +1,29 @@
 
 const questionsList = [{
-  question: '3*2=',
+  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
-    {label:'a',option:'6'},
-    {label:'b',option:'3'},
-    {label:'c',option:'8'},
-    {label:'d',option:'2'},
+    {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'c',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'d',option:'Dolor sit amet, consectetur adipisicing elit ?'},
   ],
   correctAnswer: '6',
 },{
-  question: '1+1=',
+  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
-    {label:'a',option:'2'},
-    {label:'b',option:'3'},
-    {label:'c',option:'1'},
-    {label:'d',option:'11'},
+    {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'c',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'d',option:'Dolor sit amet, consectetur adipisicing elit ?'},
   ],
   correctAnswer: '2',
 },{
-  question: '5-4=',
+  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
-    {label:'a',option:'5'},
-    {label:'b',option:'4'},
-    {label:'c',option:'1'},
-    {label:'d',option:'2'},
+    {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'c',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'d',option:'Dolor sit amet, consectetur adipisicing elit ?'},
   ],
   correctAnswer: '1',
 },]
@@ -44,11 +44,12 @@ function renderQuestion(questionNumber) {
 
   let answer=[]
   let question=[]
-  question.push(`<h4>${questionsList[questionNumber].question}</h4>`)
+  question.push(`<h4>${questionsList[questionNumber].question}</h4>
+    <h6>QUESTION 0 OF 2</h6>`)
   questionsList[questionNumber].answer.forEach((item,index) => {
-    answer.push(`<div class="option"><div class="label"><label>${item.label}</label></div>
-    <input value=${item.option} name=${questionNumber} type="radio"/>
-    <strong>${item.option}</strong></div>`)
+    answer.push(`<div class="option"><div class="label">
+    ${item.label}<input value=${item.option} name=${questionNumber} type="radio"/></div>
+    <div class="option-item">${item.option}</div></div>`)
   })
   questionsElement.innerHTML = `<li>${[...question,...answer].join('')}</li>`
 }
@@ -74,6 +75,7 @@ function showResult(e) {
   answers.forEach((item,index) => {
     score += (item.value === questionsList[index].correctAnswer) ? 1 : 0
   })
+  console.log(answers)
 }
 
 
