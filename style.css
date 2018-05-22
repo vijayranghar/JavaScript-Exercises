@@ -22,7 +22,7 @@ ul {
     padding: 0; }
 
 header {
-  background: #384C75;
+  background: #394b78;
   padding: 10px; }
   header .bullet {
     height: 10px;
@@ -37,10 +37,12 @@ header {
   height: 100%; }
   .wrapper .navigation {
     background: #2e3243;
-    width: 200px;
+    width: 170px;
     display: flex;
     justify-content: center;
-    padding-top: 40px; }
+    padding-top: 40px;
+    border-top: 2px solid #272938;
+    border-right: 2px solid #272938; }
     .wrapper .navigation li:nth-child(1) a::before {
       content: "";
       font-family: "Font Awesome 5 Free";
@@ -93,9 +95,37 @@ header {
       margin-right: 15px; }
     .wrapper .navigation li {
       margin-bottom: 20px; }
+      .wrapper .navigation li:last-child {
+        padding-top: 80px;
+        margin-top: 80px;
+        border-top: 2px solid #373c53; }
+      .wrapper .navigation li a {
+        color: #9da6c7;
+        transition: color 300ms ease-in-out; }
+        .wrapper .navigation li a:hover {
+          color: #5b5f71; }
   .wrapper .questions-wrapper {
     background: #f7f8fb;
-    width: calc(100% - 500px); }
+    width: calc(100% - 420px); }
+    .wrapper .questions-wrapper header {
+      background: #fff;
+      padding: 20px 20px;
+      border-bottom: 2px solid #f1f3f8; }
+      .wrapper .questions-wrapper header > div {
+        background: #fff;
+        max-width: 650px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between; }
+    .wrapper .questions-wrapper .info p {
+      color: #707ea2; }
+      .wrapper .questions-wrapper .info p::before {
+        content: "\f359";
+        font-family: "Font Awesome\ 5 Free";
+        margin-right: 5px; }
+    .wrapper .questions-wrapper .prizes {
+      color: #49b7d6;
+      font-weight: 700; }
     .wrapper .questions-wrapper #questions {
       width: 650px;
       margin: 0 auto; }
@@ -149,7 +179,7 @@ header {
             border-color: #9D9DD4; }
 
 aside {
-  width: 300px;
+  width: 250px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -158,12 +188,32 @@ aside {
     background: #272938;
     display: flex;
     color: #fff;
-    flex-direction: column;
-    align-items: center; }
+    flex-direction: column; }
     aside .progress h4 {
       font-size: 45px;
-      color: #a87ece;
-      font-weight: 400; }
+      color: #ba92e3;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 5px; }
+      aside .progress h4 + p {
+        text-align: center;
+        color: #5e637d;
+        text-transform: uppercase;
+        margin-bottom: 30px; }
+    aside .progress::before {
+      content: '';
+      width: 80%;
+      height: 5px;
+      display: block;
+      background: #ba92e3; }
+  aside .course-description {
+    background: #2e3244;
+    color: #65697f;
+    padding: 25px 15px; }
+  aside .progress-description {
+    background: #2e3143;
+    height: 400px; }
   aside .is-hidden {
     display: none !important; }
   aside .is-visible {

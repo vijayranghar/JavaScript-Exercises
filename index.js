@@ -1,15 +1,15 @@
 
 const questionsList = [{
-  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
+  question: '1 Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
     {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
     {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
     {label:'c',option:'Dolor sit amet, consectetur adipisicing elit ?'},
-    {label:'d',option:'Dolor sit amet, consectetur adipisicing elit ?'},
+    {label:'d',option:'Dolor sit amet, consectetur adipisicing elit ? '},
   ],
   correctAnswer: '6',
 },{
-  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
+  question: '2 Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
     {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
     {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
@@ -18,7 +18,7 @@ const questionsList = [{
   ],
   correctAnswer: '2',
 },{
-  question: 'Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
+  question: '3 Orem ipsum dolor sit amet, consectetur adipisicing elit ?',
   answer: [
     {label:'a',option:'Dolor sit amet, consectetur adipisicing elit ?'},
     {label:'b',option:'Dolor sit amet, consectetur adipisicing elit ?'},
@@ -37,6 +37,8 @@ function renderInitialQuestion () {
 
 
 function renderQuestion(questionNumber) {
+  let optionsElement= document.getElementsByClassName("option")
+  console.log(optionsElement)
   //progress
   console.log(questionNumber)
   progress = ((questionNumber+1)/questionsList.length) * 100
@@ -87,6 +89,9 @@ let nextButton = document.getElementById("nextButton")
 let questionsElement = document.getElementById("questions")
 let progressBar =  document.getElementById("progress")
 
-startTestButton.addEventListener('click', renderInitialQuestion)
+
+
+//startTestButton.addEventListener('click', renderInitialQuestion)
+window.onLoad = renderInitialQuestion()
 submitButton.addEventListener('click', showResult)
 nextButton.addEventListener('click', showNextQuestion)
