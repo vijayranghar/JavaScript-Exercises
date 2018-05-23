@@ -30,7 +30,6 @@ const questionsList = [{
 
 // render first question
 function renderInitialQuestion () {
-  startTestButton.classList.toggle('is-hidden')
   nextButton.classList.toggle('is-visible')
   renderQuestion(counter)
 }
@@ -43,7 +42,6 @@ function renderQuestion(questionNumber) {
   console.log(questionNumber)
   progress = ((questionNumber+1)/questionsList.length) * 100
   console.log(progress)
-
   let answer=[]
   let question=[]
   question.push(`<h4>${questionsList[questionNumber].question}</h4>
@@ -80,18 +78,23 @@ function showResult(e) {
   console.log(answers)
 }
 
+function highlightSelected(e) {
+  console.log(e)
+  if(e.target.className==="option") {
+    e.target.className +=" selected"
+  }
+}
 
 let counter = 0
 let progress = 0
 let submitButton = document.getElementById("submitButton")
-let startTestButton = document.getElementById("startTestButton")
 let nextButton = document.getElementById("nextButton")
 let questionsElement = document.getElementById("questions")
 let progressBar =  document.getElementById("progress")
-
 
 
 //startTestButton.addEventListener('click', renderInitialQuestion)
 window.onLoad = renderInitialQuestion()
 submitButton.addEventListener('click', showResult)
 nextButton.addEventListener('click', showNextQuestion)
+questionsElement.addEventListener("click", highlightSelected)
