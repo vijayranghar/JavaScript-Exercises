@@ -27,7 +27,7 @@ header {
   header .bullet {
     height: 10px;
     width: 10px;
-    background: white;
+    background: #b5bccd;
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px; }
@@ -154,7 +154,7 @@ header {
             border-bottom: 1px solid #f3f4f9; }
           .wrapper .questions-wrapper form #questions .option .option-item {
             font-size: 18px; }
-          .wrapper .questions-wrapper form #questions .option .label {
+          .wrapper .questions-wrapper form #questions .option .input-radio {
             border: 2px solid #333;
             border-radius: 50%;
             transition: border 300ms ease-in-out;
@@ -163,10 +163,14 @@ header {
             position: relative;
             margin-right: 15px;
             display: flex;
-            align-items: center;
             justify-content: center;
             text-transform: uppercase; }
-            .wrapper .questions-wrapper form #questions .option .label input {
+            .wrapper .questions-wrapper form #questions .option .input-radio > span {
+              position: relative;
+              top: 2px;
+              left: 0px;
+              font-size: 13px; }
+            .wrapper .questions-wrapper form #questions .option .input-radio input {
               position: absolute;
               left: 0;
               right: 0;
@@ -179,13 +183,13 @@ header {
               outline: none; }
           .wrapper .questions-wrapper form #questions .option:hover {
             background: #f7f8fb;
-            color: #9D9DD4; }
-            .wrapper .questions-wrapper form #questions .option:hover .label {
+            color: #8c58c4 !important; }
+            .wrapper .questions-wrapper form #questions .option:hover .input-radio {
               border-color: #9D9DD4; }
           .wrapper .questions-wrapper form #questions .option.selected {
             background: #f7f8fb;
-            color: #9D9DD4; }
-            .wrapper .questions-wrapper form #questions .option.selected .label {
+            color: #8c58c4 !important; }
+            .wrapper .questions-wrapper form #questions .option.selected .input-radio {
               border-color: #9D9DD4; }
       .wrapper .questions-wrapper form button {
         width: 150px;
@@ -203,54 +207,53 @@ header {
           transition: background 250ms ease-in; }
           .wrapper .questions-wrapper form button#nextButton:hover {
             background: #2893b0; }
-
-aside {
-  width: 250px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  justify-content: flex-start; }
-  aside .progress {
-    background: #272938;
+  .wrapper aside {
+    width: 250px;
     display: flex;
-    color: #fff;
-    flex-direction: column; }
-    aside .progress h4 {
-      font-size: 45px;
-      color: #ba92e3;
-      font-weight: 400;
-      text-align: center;
-      margin-top: 30px;
-      margin-bottom: 5px; }
-      aside .progress h4 + p {
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start; }
+    .wrapper aside .progress {
+      background: #272938;
+      display: flex;
+      color: #fff;
+      flex-direction: column; }
+      .wrapper aside .progress h4 {
+        font-size: 45px;
+        color: #ba92e3;
+        font-weight: 400;
         text-align: center;
-        color: #5e637d;
-        text-transform: uppercase;
-        margin-bottom: 30px; }
-    aside .progress::before {
-      content: '';
-      width: 80%;
-      height: 5px;
-      display: block;
-      background: #ba92e3; }
-  aside .course-description {
-    background: #2e3244;
-    color: #65697f;
-    padding: 25px 15px; }
-  aside .progress-description {
-    background: #2e3143;
-    height: 100px; }
-  aside .is-hidden {
+        margin-top: 30px;
+        margin-bottom: 5px; }
+        .wrapper aside .progress h4 + p {
+          text-align: center;
+          color: #5e637d;
+          text-transform: uppercase;
+          margin-bottom: 30px; }
+      .wrapper aside .progress::before {
+        content: '';
+        width: 80%;
+        height: 5px;
+        display: block;
+        background: #ba92e3; }
+    .wrapper aside .course-description {
+      background: #2e3244;
+      color: #65697f;
+      padding: 25px 15px; }
+    .wrapper aside .progress-description {
+      background: #2e3143;
+      height: 100px; }
+  .wrapper .is-hidden {
     display: none !important; }
-  aside .is-visible {
+  .wrapper .is-visible {
     display: block !important; }
-  aside #startTestButton {
+  .wrapper #startTestButton {
     display: block; }
-  aside #nextButton {
+  .wrapper #nextButton {
     display: none; }
-  aside #submitButton {
+  .wrapper #submitButton {
     display: none; }
-  aside #submitButton.is-visible {
+  .wrapper #submitButton.is-visible {
     display: block; }
 
 /*# sourceMappingURL=style.css.map */
