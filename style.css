@@ -191,22 +191,26 @@ header {
             color: #8c58c4 !important; }
             .wrapper .questions-wrapper form #questions .option.selected .input-radio {
               border-color: #9D9DD4; }
-      .wrapper .questions-wrapper form button {
-        width: 150px;
-        height: 40px;
-        line-height: 40px;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        outline: none;
-        font-size: 14px;
-        font-weight: 600; }
-        .wrapper .questions-wrapper form button#nextButton {
-          background: #39b1d2;
-          border: 1px solid #1aa5cb;
-          color: #fff;
-          transition: background 250ms ease-in; }
-          .wrapper .questions-wrapper form button#nextButton:hover {
-            background: #2893b0; }
+      .wrapper .questions-wrapper form .btn-wrapper {
+        display: flex; }
+        .wrapper .questions-wrapper form .btn-wrapper #previousButton {
+          margin-right: 15px; }
+        .wrapper .questions-wrapper form .btn-wrapper button {
+          width: 130px;
+          height: 40px;
+          line-height: 40px;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          outline: none;
+          font-size: 14px;
+          font-weight: 600; }
+          .wrapper .questions-wrapper form .btn-wrapper button#nextButton {
+            background: #39b1d2;
+            border: 1px solid #1aa5cb;
+            color: #fff;
+            transition: background 250ms ease-in; }
+            .wrapper .questions-wrapper form .btn-wrapper button#nextButton:hover {
+              background: #2893b0; }
   .wrapper aside {
     width: 250px;
     display: flex;
@@ -214,6 +218,12 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     background: #2e3244; }
+    .wrapper aside .progress-bar {
+      width: 0%;
+      height: 5px;
+      display: block;
+      background: #ba92e3;
+      transition: width 200ms ease-out; }
     .wrapper aside .progress {
       display: flex;
       color: #fff;
@@ -232,12 +242,6 @@ header {
           color: #5e637d;
           text-transform: uppercase;
           margin-bottom: 30px; }
-      .wrapper aside .progress::before {
-        content: '';
-        width: 80%;
-        height: 5px;
-        display: block;
-        background: #ba92e3; }
     .wrapper aside .course-description {
       color: #65697f;
       padding: 25px 25px; }
@@ -271,18 +275,21 @@ header {
           .wrapper aside .progress-description li a::after {
             display: inline-block;
             content: '';
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: #38ffc8;
             border-radius: 50%; }
   .wrapper .is-hidden {
     display: none !important; }
   .wrapper .is-visible {
     display: block !important; }
+  .wrapper .is-disable {
+    pointer-events: none;
+    opacity: .5;
+    background: #f1f1f1;
+    transition: all 250ms; }
   .wrapper #startTestButton {
     display: block; }
-  .wrapper #nextButton {
-    display: none; }
   .wrapper #submitButton {
     display: none; }
   .wrapper #submitButton.is-visible {

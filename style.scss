@@ -186,22 +186,28 @@ header {
           }
         }
       }
-      button {
-        width: 150px;
-        height: 40px;
-        line-height: 40px;
-        border: 1px solid #ddd;
-        cursor: pointer;
-        outline: none;
-        font-size: 14px;
-        font-weight: 600;
-        &#nextButton {
-          background: #39b1d2;
-          border: 1px solid #1aa5cb;
-          color: #fff;
-          transition: background 250ms ease-in;
-          &:hover {
-            background: darken(#39b1d2, 10%);
+      .btn-wrapper {
+        display: flex;
+        #previousButton {
+          margin-right: 15px;
+        }
+        button {
+          width: 130px;
+          height: 40px;
+          line-height: 40px;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          outline: none;
+          font-size: 14px;
+          font-weight: 600;
+          &#nextButton {
+            background: #39b1d2;
+            border: 1px solid #1aa5cb;
+            color: #fff;
+            transition: background 250ms ease-in;
+            &:hover {
+              background: darken(#39b1d2, 10%);
+            }
           }
         }
       }
@@ -214,6 +220,13 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     background: #2e3244;
+    .progress-bar {
+      width: 0%;
+      height: 5px;
+      display: block;
+      background: #ba92e3;
+      transition: width 200ms ease-out;
+    }
     .progress {
       display: flex;
       color: #fff;
@@ -233,13 +246,6 @@ header {
           text-transform: uppercase;
           margin-bottom: 30px;
         }
-      }
-      &::before {
-        content: '';
-        width: 80%;
-        height: 5px;
-        display: block;
-        background: #ba92e3;
       }
     }
     .course-description {
@@ -282,8 +288,8 @@ header {
           &::after  {
             display: inline-block;
             content: '';
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: #38ffc8;
             border-radius: 50%;
           }
@@ -297,12 +303,18 @@ header {
   .is-visible {
     display: block!important;
   }
+  .is-disable {
+    pointer-events: none;
+    opacity: .5;
+    background: #f1f1f1;
+    transition: all 250ms;
+  }
   #startTestButton {
     display: block;
   }
-  #nextButton {
-    display: none;
-  }
+  // #nextButton {
+  //   display: none;
+  // }
   #submitButton {
     display: none;
   }
