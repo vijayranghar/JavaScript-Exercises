@@ -82,10 +82,11 @@
     let target = e.target
     switch (target.className) {
       case "option":
-        if(target.previousSibling && target.previousSibling.classList.contains("selected"))
-          target.previousSibling.classList.remove("selected")
-        if(target.nextSibling && target.nextSibling.classList.contains("selected"))
-          target.nextSibling.classList.remove("selected")
+        if(document.querySelectorAll(".option")) {
+          document.querySelectorAll(".option").forEach((item) => {
+           if(item.classList.contains("selected"))
+            item.classList.remove("selected")
+        })}
         target.className += " selected"
         break;
       case "option-item":
