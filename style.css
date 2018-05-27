@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700");
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a; }
 
 a {
   text-decoration: none;
@@ -130,17 +133,27 @@ header {
       width: 650px;
       margin: 0 auto; }
       .wrapper .questions-wrapper form #questions {
-        margin-bottom: 25px; }
+        margin-bottom: 25px;
+        perspective: 800px; }
+        .wrapper .questions-wrapper form #questions li {
+          opacity: 0;
+          transform: rotateY(-90deg);
+          transition: rotateY 0.3s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
+          .wrapper .questions-wrapper form #questions li.animate {
+            opacity: 1;
+            transform: none;
+            transition: all 0.3s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
         .wrapper .questions-wrapper form #questions h4 {
-          font-size: 26px;
-          font-weight: 200;
+          font-size: 22px;
+          font-weight: 800;
           margin: 40px auto 0px; }
         .wrapper .questions-wrapper form #questions h6 {
           text-transform: capitalize;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 800;
           color: #37a7c5;
-          margin-bottom: 40px; }
+          margin-bottom: 40px;
+          margin-top: 5px; }
         .wrapper .questions-wrapper form #questions .option {
           padding: 15px 25px;
           background: #fff;
@@ -153,7 +166,7 @@ header {
           .wrapper .questions-wrapper form #questions .option:last-child {
             border-bottom: 1px solid #f3f4f9; }
           .wrapper .questions-wrapper form #questions .option .option-item {
-            font-size: 18px; }
+            font-size: 16px; }
           .wrapper .questions-wrapper form #questions .option .input-radio {
             border: 2px solid #333;
             border-radius: 50%;
@@ -191,14 +204,25 @@ header {
             color: #8c58c4 !important; }
             .wrapper .questions-wrapper form #questions .option.selected .input-radio {
               border-color: #9D9DD4; }
+        .wrapper .questions-wrapper form #questions .submit-text {
+          margin-top: 200px;
+          margin-bottom: 50px; }
+          .wrapper .questions-wrapper form #questions .submit-text h2 {
+            font-size: 50px;
+            text-align: center; }
       .wrapper .questions-wrapper form .btn-wrapper {
-        display: flex; }
+        display: flex;
+        justify-content: center; }
         .wrapper .questions-wrapper form .btn-wrapper #previousButton {
-          margin-right: 15px; }
+          margin-right: 15px;
+          transition: background 200ms; }
+          .wrapper .questions-wrapper form .btn-wrapper #previousButton:hover {
+            background: #eae8e8; }
         .wrapper .questions-wrapper form .btn-wrapper button {
           width: 130px;
           height: 40px;
           line-height: 40px;
+          border-radius: 3px;
           border: 1px solid #ddd;
           cursor: pointer;
           outline: none;
@@ -223,7 +247,7 @@ header {
       height: 5px;
       display: block;
       background: #ba92e3;
-      transition: width 200ms ease-out; }
+      transition: width 300ms ease-out; }
     .wrapper aside .progress {
       display: flex;
       color: #fff;
@@ -291,7 +315,13 @@ header {
   .wrapper #startTestButton {
     display: block; }
   .wrapper #submitButton {
-    display: none; }
+    display: none;
+    background-color: #5cb85c;
+    border: 1px solid #4cae4c;
+    color: #fff; }
+    .wrapper #submitButton:hover {
+      background-color: #449d44;
+      border-color: #398439; }
   .wrapper #submitButton.is-visible {
     display: block; }
 

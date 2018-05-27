@@ -69,6 +69,7 @@
       progressBar.style.width=`${progress.toFixed()}%`
       let answer=[]
       let question=[]
+      let listItem = document.createElement("li")
       question.push(`<h4>${questionsList[questionNumber].question}</h4>
         <h6>QUESTION ${questionNumber+1} OF ${questionsList.length}</h6>`)
       questionsList[questionNumber].answer.forEach((item,index) => {
@@ -76,10 +77,15 @@
         <span>${item.label}</span><input value=${item.option} name=${questionNumber} type="radio"/></div>
         <div class="option-item">${item.option}</div></label>`)
       })
-      questionsElement.innerHTML = `<li>${[...question,...answer].join('')}</li>`
+      questionsElement.innerHTML = ""
+      questionsElement.appendChild(listItem)
+      listItem.innerHTML = `${[...question,...answer].join('')}`
+      setTimeout( () => {
+        listItem.classList = "animate"
+      }, 30)
     }
     else {
-      questionsElement.innerHTML= "SUBMIT"
+      questionsElement.innerHTML= `<div class="submit-text"><h2>Do you really want to submit ?</h2></div>`
       nextButton.classList="is-hidden"
       submitButton.classList="is-visible"
     }
