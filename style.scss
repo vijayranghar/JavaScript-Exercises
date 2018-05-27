@@ -120,11 +120,11 @@ header {
         li {
           opacity: 0;
           transform: rotateY(-90deg);
-          transition: rotateY 0.3s cubic-bezier(.36,-0.64,.34,1.76);
+          transition: all 0.6s cubic-bezier(.36,-0.64,.34,1.76);
           &.animate {
             opacity: 1;
             transform: none;
-            transition: all 0.3s cubic-bezier(.36,-0.64,.34,1.76);
+            transition: all 0.6s cubic-bezier(.36,-0.64,.34,1.76);
           }
         }
         h4 {
@@ -238,6 +238,13 @@ header {
               background: darken(#39b1d2, 10%);
             }
           }
+        }
+      }
+      .result {
+        margin-top: 200px;
+        text-align: center;
+        h2 {
+          font-size: 50px;
         }
       }
     }

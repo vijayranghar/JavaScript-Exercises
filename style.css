@@ -138,11 +138,11 @@ header {
         .wrapper .questions-wrapper form #questions li {
           opacity: 0;
           transform: rotateY(-90deg);
-          transition: rotateY 0.3s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
+          transition: all 0.6s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
           .wrapper .questions-wrapper form #questions li.animate {
             opacity: 1;
             transform: none;
-            transition: all 0.3s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
+            transition: all 0.6s cubic-bezier(0.36, -0.64, 0.34, 1.76); }
         .wrapper .questions-wrapper form #questions h4 {
           font-size: 22px;
           font-weight: 800;
@@ -235,6 +235,11 @@ header {
             transition: background 250ms ease-in; }
             .wrapper .questions-wrapper form .btn-wrapper button#nextButton:hover {
               background: #2893b0; }
+      .wrapper .questions-wrapper form .result {
+        margin-top: 200px;
+        text-align: center; }
+        .wrapper .questions-wrapper form .result h2 {
+          font-size: 50px; }
   .wrapper aside {
     width: 250px;
     display: flex;
